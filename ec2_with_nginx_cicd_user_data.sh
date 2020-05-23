@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 ###################	Execution	#####################
 apt-get -y update && apt-get -y upgrade && apt-get -y autoremove
-cd /home/ubuntu && mkdir http-server
+cd /home/ubuntu && mkdir http-server && cd /tmp
 . ./setup_nginx_basic_http_server.sh # Nginx Setup
 . ./install_certbot.sh #Certbot
 . ./install_aws_code_deploy_agent.sh #AWS Code Deploy
