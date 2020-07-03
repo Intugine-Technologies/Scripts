@@ -4,8 +4,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 
 ###################	Execution	#####################
-echo "ClientAliveInterval 120" | sudo tee -a /etc/ssh/sshd_config
-echo "ClientAliveCountMax 720" | sudo tee -a /etc/ssh/sshd_config
+echo "ClientAliveInterval 120" | tee -a /etc/ssh/sshd_config
+echo "ClientAliveCountMax 720" | tee -a /etc/ssh/sshd_config
+service sshd restart
 apt-get -y update && apt-get -y upgrade && apt-get -y autoremove
 mkdir /home/ubuntu/http-server
 . ./setup_nginx_basic_http_server.sh # Nginx Setup
